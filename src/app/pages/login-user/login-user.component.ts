@@ -32,7 +32,11 @@ export class LoginUserComponent implements OnInit {
     this.hide = true;
     encryptStorage.clear();
 
-    this.http2.get<any>("https://astacameroun.github.io/url.json").subscribe((res) => {
+    this.http2.get<any>("
+                        https://xxxxxxxx.github.io/url.json"
+    
+                       
+                       ).subscribe((res) => {
       console.log(res);
       
   
