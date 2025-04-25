@@ -1,0 +1,73 @@
+<app-navigator [active]="page"></app-navigator>
+
+<div class="add mt-5" >
+  <div class="row mb-3">
+    <div class="col-1">
+
+    </div>
+    <div class="col-10" style="border: 0px solid green ;">
+            <div  style="border:0px solid red;width: 600px; margin: auto;">
+                <div class="row">
+                <div class="col-8">
+                    <div style="color:#00B0D1"  class="bg-white border border-primary border-3 p-1  text-center">
+                        <b>Enregistrer un donneur de sang</b> 
+                    </div>
+                </div>
+                <div  class="col-4">
+                    <div style="color:#00B0D1"  class="bg-white border border-primary border-3 p-1 text-center" >
+                        <b>Etape {{index}}/5</b> 
+                    </div>
+                
+                </div>
+            
+                </div>
+            </div>
+</div>
+
+<div class="col-1">
+
+    </div>
+</div> 
+    <div class="row">
+      <div class="col-1" style="display: flex; margin:auto">
+        <button *ngIf="index!=1" class="btn rounded-circle" (click)="prev()"><i class="fa fa-arrow-left " ></i></button>
+           </div>
+      <div class="col-10" style="border: 0px solid green ;">
+      <div class="p-3"  style="border:3px solid #00B0D1;width: 600px;margin: auto; ">
+  
+
+          <app-etape1  style="margin: auto;" *ngIf="index==1" (bon)="is_good($event)"  (voted)="onVoted($event)"></app-etape1>
+
+          <app-etape2 *ngIf="index==2" (voted)="onVoted2($event)" ></app-etape2>
+          
+          <app-etape3 *ngIf="index==3"  (voted)="onVoted3($event)" ></app-etape3>
+          
+          <app-etape4 *ngIf="index==4" (voted)="onVoted4($event)"></app-etape4>
+          
+          <app-etape5 *ngIf="index==5"></app-etape5>
+
+        </div>
+      </div>
+        <div class="col-1" style="display: flex; margin:auto">
+          <button [disabled]="valid==false"  *ngIf="index!=5" class="btn rounded-circle" (click)="index==1?openDialog(template):next()" ><i class="fa fa-arrow-right " ></i></button>
+             </div>
+              
+    
+
+
+
+
+</div>
+
+
+<ng-template #template>
+  <h1 mat-dialog-title>Attention !!!</h1>
+  <div mat-dialog-content>
+    Voulez vous enregistrer ce donneur de sang?
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button (click)="save()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Enregistrer</button>
+  </div>
+ 
+ </ng-template>

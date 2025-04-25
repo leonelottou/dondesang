@@ -1,0 +1,32 @@
+.warn{
+    background-color:#FD9843;
+}
+.good{
+    background-color:#00B0D1;
+
+}
+
+.danger{
+    background-color:#DC3545;
+    color: white;
+
+    
+}
+tbody th,tbody td{
+  
+    color: white;
+    
+    
+}
+
+.minhead th, .minhead td{
+  
+    color: black;
+    
+    
+}
+
+.search:focus {
+    outline: none;
+    box-shadow: none;
+  }

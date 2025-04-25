@@ -1,0 +1,29 @@
+.login{
+    max-width: 500px;
+
+    margin: auto;
+    text-align: center;
+}
+
+.formu{
+    font-size: 15px;
+    text-align: center;
+}
+
+mat-form-field {
+    width: 70%;
+  }
+
+  .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #DFDFDF;
+  }
+
+  .nb{
+      font-weight: 500;
+      color: #00B0D1 ;
+  }
+
+
+  

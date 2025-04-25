@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+    <a [ngClass]="{'active': active=='home'}" [routerLink]="['/home']" class="nav-link active" aria-current="page" href="#">Accueil</a> 
+    <a [ngClass]="{'active': active=='register'}"  [routerLink]="['/choix']"  class="nav-link" href="#">Enregistrer un donneur</a>
+    <a [ngClass]="{'active': active=='search'}" [routerLink]="['/search']"  class="nav-link" href="#">Rechercher un donneur</a>
+    <a   [ngClass]="{'active': active=='listedon'}" [routerLink]="['/listedons']" class="nav-link" href="#">Entrer des resultats</a>
+    <a [ngClass]="{'active': active=='verifbank'}"  [routerLink]="['/verifbank']" class="nav-link" href="#">Verifier la banque de sang</a>
+    <a [routerLink]="['/login']" class="nav-link " href="#" tabindex="-1" aria-disabled="true">Se deconnecter</a>
+  </nav>
+  
+

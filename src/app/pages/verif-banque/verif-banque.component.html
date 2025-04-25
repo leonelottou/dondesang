@@ -1,0 +1,81 @@
+<app-navigator [active]="page"></app-navigator>
+
+<div class="row ">
+    <div class="col-md-4" style="border: 0px solid red;"> 
+        <div style="color:#00B0D1;width:300px;height: 50px;line-height: 25px;"  class="bg-white border border-primary border-3 p-1  mt-3 text-center  ms-4">
+        <b>Verifier la banque de sang</b> 
+         </div>
+
+</div>
+
+    <div class="col-md-4" style="border: 0px solid red;">
+
+        <div class="input-group mb-4 border rounded-pill p-1 mt-3 border border-primary border-3" style="width:300px">
+            <div class="input-group-prepend border-0">
+              <button id="button-addon4" type="button" class="btn btn-link text-info"></button>
+            </div>
+            <input (input)="getItems($event)" [(ngModel)]="searchTerm"  style="color:#00B0D1;" type="search" placeholder="Rechercher.." aria-describedby="button-addon4" class=" search form-control bg-none border-0">
+        
+            <div class="input-group-append border-0">
+                <button id="button-addon4" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
+              </div>
+          </div>
+        
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<div class=" p-3 "  style="border:3px solid #00B0D1;width: 95%;margin: auto;  ">
+  
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Centres</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Quartier</th>
+         
+            <th scope="col" colspan="4">Nombres de poches disponibles</th>
+            <th scope="col">Qualites des reserves</th>
+            <th scope="col">Date de dernier recensement</th>
+   
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="minhead" >
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <th scope="row" >A</th>
+                <th scope="row">B</th>
+                <th scope="row">O</th>
+                <th scope="row">AB</th>
+                <td></td>
+                <td ></td>
+            
+              </tr>
+          <tr *ngFor="let item of donne"  [ngClass]="{'danger': item.qualite=='critique' , 'warn':item.qualite=='Moyenne','good':item.qualite=='bonne'}" >
+            <th scope="row">{{item.centre}}</th>
+            <td>{{item.ville}}</td>
+            <td>{{item.quartier}}</td>
+            <td>{{item.ga}}</td>
+            <td>{{item.gb}}</td>
+            <td>{{item.go}}</td>
+            <td>{{item.gab}}</td>
+            <td>{{item.qualite}}</td>
+            <td >{{item.dernier_d}}</td>
+        
+          </tr>
+        </tbody>  
+    </table>
+
+
+
+
+  </div>

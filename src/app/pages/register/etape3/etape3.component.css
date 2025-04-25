@@ -1,0 +1,18 @@
+.question{
+    width:400px;
+    border: 3px solid #00B0D1 ;
+    color:#00B0D1 ;
+    font-weight: bold;
+}
+
+
+
+
+  [type="radio"]:checked {
+    border-color: #00B0D1;
+    background-color: #00B0D1;
+}
+
+
+  
+ 

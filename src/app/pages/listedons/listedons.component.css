@@ -1,0 +1,9 @@
+tr[ng-reflect-router-link] {
+    cursor: pointer;
+  }
+
+
+  .search:focus {
+    outline: none;
+    box-shadow: none;
+  }

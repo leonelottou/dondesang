@@ -1,0 +1,36 @@
+<div *ngIf="type==1">
+    <div  class="invalid-feedback d-block mb-0" *ngFor="let validation of validation_messages[champ]" >
+
+        <div  *ngIf=" val(nom) && form.get(nom).hasError(validation.type)  ">
+           {{ validation.message }}
+       
+        </div>
+       
+       </div>
+
+</div>
+
+<div *ngIf="type==2">
+    <div  class="invalid-feedback d-block mb-0" *ngFor="let validation of validation_messages[champ]" >
+
+        <div  *ngIf=" val2(nom) && form.get(form2).get(nom).hasError(validation.type)  ">
+           {{ validation.message }}
+       
+        </div>
+       
+       </div>
+
+</div>
+
+<div *ngIf="type==3">
+    <div  class="invalid-feedback d-block mb-0" *ngFor="let validation of validation_messages[champ]" >
+
+        <div  *ngIf=" val3(nom) && form.get(form2).hasError(validation.type)">
+           {{ validation.message }}
+       
+        </div>
+       
+       </div>
+
+
+</div>

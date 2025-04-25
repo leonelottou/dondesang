@@ -1,0 +1,103 @@
+
+<mat-icon>warning</mat-icon>
+
+<div style="color:#00B0D1"  class="bg-white border border-primary border-3 p-2 mb-3  text-center ">
+    <b>Accord pour prelevement</b> 
+    </div>
+
+    <div style="color:#00B0D1"  class="bg-white border border-primary border-3 p-2 mb-3  text-center ">
+        <b>Le donneur ne presente aucune restriction pour le prelevement de sang</b> 
+        </div>
+
+        <div style="color:#00B0D1"  class="bg-white border border-primary border-3 p-2 mb-3  text-center ">
+            <b>Veuillez noter la quantité de sang à preveler</b> 
+            </div>
+
+            
+<div class="input-group mb-3" style="width: 100px;margin: auto;">
+
+    <input [(ngModel)]="quantite" [showMaskTyped]="true"  mask="000" placeHolderCharacter="_"  autocomplete="new-password"  type="text" class="form-control" placeholder="Poids" aria-label="poids" aria-describedby="basic-addon1">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">ml</span>
+</div>
+
+<button [disabled]="quantite==null || quantite==''" (click)="openDialog(template,'300px','200px')" mat-raised-button color="success">Valider</button>
+
+
+    
+  
+    
+<ng-template #template>
+    <h1 mat-dialog-title style="margin: auto ; text-align: center;"><b>Attention !!!</b> </h1>
+    <div mat-dialog-content>
+      Voulez vous prelevez {{quantite}} ml du donneur ?
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Non</button>
+      <button  (click)="openDialog(template2,'600px','400px')" mat-button [mat-dialog-close]="true" cdkFocusInitial>Oui</button>
+    </div>
+   
+   </ng-template>
+
+       
+<ng-template #template2>
+
+    <div class="info" style="width: 600px;">
+
+
+    <h1 mat-dialog-title style="margin: auto ; text-align: center;"><b>Information sur le don</b> </h1>
+
+    <div class="row mt-3">
+        <div class="col" >
+            <span class="p-2 ml-3 question"   id="basic-addon1">Code du donneur </span>
+        </div>
+        <div class="col" >
+            <span class="p-2 ml-3 question"     id="basic-addon1">{{local['code_donneur']}} </span>
+        </div>
+ 
+    </div>
+    <br>
+    <div class="row mt-3">
+        <div class="col" >
+            <span class="p-2 ml-3 question"    id="basic-addon1">Code du prelevement </span>
+        </div>
+        <div class="col" >
+            <span class="p-2 ml-3 question"   id="basic-addon1">{{code_prelevement}} </span>
+        </div>
+ 
+    </div>
+    <br>
+    
+    <div class="row mt-3">
+        <div class="col" >
+            <span class="p-2 ml-3 question"    id="basic-addon1">Date du prelevement </span>
+        </div>
+        <div class="col" >
+            <span class="p-2 ml-3 question"    id="basic-addon1">{{dateformate(date_prelevement)}} </span>
+        </div>
+ 
+    </div> <br>
+
+    <div class="row mt-3 mb-3">
+        <div class="col" >
+            <span class="p-2 ml-3 question"    id="basic-addon1">Date du prochain prelevement :  </span>
+        </div>
+        <div class="col" >
+            <span class="p-2 ml-3 question"    id="basic-addon1">{{dateformate(date_prochain)}} </span>
+        </div>
+ 
+    </div>
+    <br>
+    
+    <button (click)="save_don()"  mat-dialog-close style="margin:auto; "   mat-raised-button color="success">OK</button>
+ 
+        </div>
+   
+   </ng-template>
+    
+    
+    
+    
+    
+    
+    
+

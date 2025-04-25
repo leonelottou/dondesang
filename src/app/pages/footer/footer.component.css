@@ -1,0 +1,12 @@
+.foot{
+
+    background-color: #00B0D1;
+    min-height: 65px;
+    width: 100%;
+    margin-bottom: auto;
+
+    bottom: 0px;
+    color: beige;
+    padding-left: 20px;
+    line-height: 65px;
+}

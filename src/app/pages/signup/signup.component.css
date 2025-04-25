@@ -1,0 +1,58 @@
+.login{
+    max-width: 500px;
+
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button.mat-button {
+    border-radius: 100;
+ }
+
+    
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #DFDFDF;
+  }
+  button.mat-button {
+    border-radius: 100;
+ }
+
+    
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #DFDFDF;
+  }
+  .is-valid:focus{
+    border: 1px solid green;
+  }
+
+  .is-invalid:focus{
+    border: 1px solid red;
+  }
+
+  
+
+
+  
+
+  .img1{
+
+    display: block;
+    margin: auto;
+
+    width: 270px;
+    margin-top: 20px;
+  }
+
+ span.label{
+
+padding: 2px;
+
+
+width:150px
+
+  }

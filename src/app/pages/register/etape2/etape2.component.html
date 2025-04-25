@@ -1,0 +1,96 @@
+
+ 
+
+
+<br>
+
+
+
+             
+<div style="color:#00B0D1"  class="bg-white border border-primary border-2 p-1 mb-3  text-center ">
+<b>EXAMENS PHYSIQUE</b> 
+</div>
+<div [formGroup]="signin">
+
+<div class="input-group mb-3" *ngIf="data['sexe']!='Masculin'">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>calendar_today</mat-icon> &nbsp;Date des derniers règles </span>
+<input (input)="d.toggle()" (click)="d.toggle()"   formControlName="date_last"  class="form-control" placeholder="Date des derniers règles"
+        name="dp" ngbDatepicker #d="ngbDatepicker"  [ngClass]="myerroclass(signin,'date_last')"> <!--  [(ngModel)]="model" -->
+<div class="input-group-append">
+    <button style="background-color: #00B0D1 ;color:white "  class="btn " (click)="d.toggle()" type="button">  <mat-icon>edit_calendar</mat-icon> </button>&nbsp; *
+</div>
+</div>
+
+<app-form-error [nom]="'date_last'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+<div class="input-group mb-3 ">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>monitor_weight</mat-icon> &nbsp;Poids</span>
+    
+    <input  formControlName="poids" [showMaskTyped]="true"  mask="000 || 00" placeHolderCharacter="_"  autocomplete="new-password"  type="text" class="form-control" placeholder="Poids" aria-label="poids" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'poids')">
+
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><span>Kg</span></span>&nbsp; *
+    
+</div>
+
+<app-form-error [nom]="'poids'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+
+<div class="input-group mb-3">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><i class="fa fa-ruler-vertical"></i> &nbsp;Taille</span>
+    
+    <input  formControlName="taille" [showMaskTyped]="true"  mask="000"   autocomplete="new-password"  type="text" class="form-control" placeholder="Taille" aria-label="Nom d 'utilisateur" aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'taille')">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">Cm</span>&nbsp; *
+</div>
+<app-form-error [nom]="'taille'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+<div class="input-group mb-3">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><i class="fa fa-crutch"></i>&nbsp;Tension arterielle</span>
+    
+    <input [dropSpecialCharacters]="false" formControlName="tension_a" [showMaskTyped]="true"  mask="000/00"  autocomplete="new-password"  type="text" class="form-control" placeholder="Tension arterielle"  aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'tension_a')" > &nbsp; *
+
+</div>
+<app-form-error [nom]="'tension_a'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+<div class="input-group mb-3">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>health_and_safety</mat-icon>&nbsp;Pouls</span>
+    
+    <input  formControlName="pouls" [showMaskTyped]="true"  mask="000"  autocomplete="new-password"  type="text" class="form-control" placeholder="Pouls" aria-label="Quartier" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'pouls')">
+
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">Pls/min</span>&nbsp; *
+</div>
+
+<app-form-error [nom]="'pouls'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+<div class="input-group mb-3">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>medical_services</mat-icon>&nbsp;Taux d'hemoglobine</span>
+    
+    <input [dropSpecialCharacters]="false" formControlName="taux_hemo" [showMaskTyped]="true"  mask="000/000" autocomplete="new-password"  type="text" class="form-control" placeholder="Taux d'hemoglobine"  aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'taux_hemo')">
+
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">Hg/cl</span>&nbsp; *
+</div>
+
+<app-form-error [nom]="'taux_hemo'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+<div class="input-group mb-3">
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>thermostat</mat-icon>&nbsp;Température</span>
+    
+    <input   formControlName="temp" [showMaskTyped]="true"  mask="00"  autocomplete="new-password"  type="text" class="form-control" placeholder=""  aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'temp')">
+
+    <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">°C</span>&nbsp; *
+</div>
+<app-form-error [nom]="'temp'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+    
+    
+</div>
+
+  
+
+  
+
+
+
+
+
+
+
+

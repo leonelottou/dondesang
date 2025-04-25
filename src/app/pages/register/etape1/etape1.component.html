@@ -1,0 +1,133 @@
+
+ 
+
+
+<br>
+
+<div [formGroup]="signin">
+
+             
+                    <div  (click)="vote()"  style="color:#00B0D1"  class="bg-white border border-primary border-2 p-1 mb-3  text-center ">
+                    <b (click)="tost()">INFORMATIONS PERSONELLES</b> 
+                    </div>
+
+                    <div class="input-group mb-3 ">
+                        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>account_circle</mat-icon>&nbsp;Nom</span>
+                        
+                        <input    formControlName="nom" autocomplete="new-password"  type="text" class="form-control" placeholder="Nom" aria-label="Nom d 'utilisateur" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'nom')">&nbsp; *
+                    </div>
+                    <app-form-error [nom]="'nom'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+                 
+
+                    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>account_circle</mat-icon>&nbsp;Prenom</span>
+                        
+                        <input formControlName="prenom"  autocomplete="new-password"  type="text" class="form-control" placeholder="Prénoms" aria-label="Nom d 'utilisateur" aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'prenom')">
+                    </div>
+
+                    <app-form-error [nom]="'prenom'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>person</mat-icon>&nbsp;Sexe</span>
+                        
+                        <select formControlName="sexe" class="form-select " aria-label=".form-select-lg example"  [ngClass]="myerroclass(signin,'sexe')" >
+                            <option selected>Sexe</option>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Feminin">Feminin</option>
+                            
+
+                        </select>&nbsp; *
+                    </div>
+                    <app-form-error [nom]="'sexe'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+                
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>calendar_today</mat-icon>&nbsp;Date de naissance</span>
+                        <input (click)="d.toggle()" (input)="d.toggle()" [(ngModel)]="date_na" formControlName="date_n" class="form-control" placeholder="Date de naissance"
+                                name="dp" ngbDatepicker #d="ngbDatepicker" [ngClass]="myerroclass(signin,'date_n')"  >  <!--  [(ngModel)]="model" -->
+                        <div class="input-group-append">
+                            <button  style="background-color: #00B0D1 ;color:white "  class="btn " (click)="d.toggle()" type="button">  <mat-icon>edit_calendar</mat-icon> </button>
+                        </div> &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'date_n'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>place</mat-icon>&nbsp;Lieu de naissance</span>
+                            
+                            <input formControlName="lieu_n"  autocomplete="new-password"  type="text" class="form-control" placeholder="Lieu de naissance" aria-label="Lieu de naissance" aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'lieu_n')"  > &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'lieu_n'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>place</mat-icon>&nbsp;Ville</span>
+                            
+                            <input formControlName="ville"  autocomplete="new-password"  type="text" class="form-control" placeholder="Ville de residence" aria-label="Ville de residence" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'ville')" > &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'ville'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>place</mat-icon>&nbsp;Quartier</span>
+                            
+                            <input formControlName="quartier"  autocomplete="new-password"  type="text" class="form-control" placeholder="Quartier" aria-label="Quartier" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'quartier')"> &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'quartier'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>person</mat-icon> &nbsp;Situation matrimoniale</span>
+                            
+                            <select formControlName="sm" class="form-select " aria-label=".form-select-lg example"  [ngClass]="myerroclass(signin,'sm')">
+                                <option >Situation matrimoniale</option>
+                                <option value="1">Marié</option>
+                                <option value="2">Célibataire</option>
+
+
+                            </select>&nbsp; *
+                        </div>
+                        <app-form-error [nom]="'sm'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>engineering</mat-icon>&nbsp;Profession</span>
+                            
+                            <input  formControlName="profession"  autocomplete="new-password"  type="text" class="form-control" placeholder="Profession" aria-label="profession" aria-describedby="basic-addon1 " [ngClass]="myerroclass(signin,'profession')"> 
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>family_restroom</mat-icon>&nbsp;Nombre d 'enfants</span>
+                            
+                            <input  formControlName="nb_enfant"   autocomplete="new-password"  type="number" class="form-control" placeholder="Nombre d 'enfant" aria-label="profession" aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'nb_enfant')"> &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'nb_enfant'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>phone</mat-icon> &nbsp;Téléphone</span>
+                            
+                            <input   formControlName="telephone"  autocomplete="new-password"  type="number" class="form-control" placeholder="Numéro de téléphone" aria-label="Ville de residence" aria-describedby="basic-addon1" [ngClass]="myerroclass(signin,'telephone')"> &nbsp; *
+                        </div>
+
+                        <app-form-error [nom]="'telephone'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1"><mat-icon>alternate_email</mat-icon>&nbsp;Email</span>
+                            
+                            <input  formControlName="email"  autocomplete="new-password"  type="email" class="form-control" placeholder="Adresse email" aria-label="Ville de residence" aria-describedby="basic-addon1"  [ngClass]="myerroclass(signin,'email')">&nbsp; *
+                        </div>
+
+                        
+                        <app-form-error [nom]="'email'" [champ]="'email'" [form]="signin"  ></app-form-error>
+
+                    </div>
+
+                 
+  
+
+     
+
+

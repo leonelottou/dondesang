@@ -1,0 +1,48 @@
+<app-navigator [active]="page"></app-navigator>
+
+
+  <div class="container  menu" >
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow" style="padding: 20px;">
+
+        <i class="fas fa-folder" style="font-size: 105px;color:orange"></i>
+   <br>
+
+        <button  [routerLink]="['/choix']" type="button" class="btn btn-outline-primary">Enregistrer un donneur</button>
+        <div class="card-body">
+          <p class="card-text">Enregistrer un donneur de sang  pour une analyse ultérieur</p>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+         <div class="card shadow" style="padding: 20px;">
+                <i class="fas fa-search" style="font-size: 105px;"></i>
+                <br>
+
+                <button  [routerLink]="['/search']"   type="button" class="btn btn-outline-primary">Rechercher un donneur</button>
+                <div class="card-body">
+                  <p class="card-text">Affichez une liste  de potentiel  donneur de sang</p>
+                </div>
+
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow" style="padding: 20px;">
+
+          <i class="fas fa-vials" style="font-size: 105px;color:red"></i>
+          <br>
+
+                <button  [routerLink]="['/verifbank']"   type="button" class="btn btn-outline-primary">Vérifier la banque de sang</button>
+                <div class="card-body">
+                  <p class="card-text">Verifiez la disponibilité du snag dans différentes banques</p>
+                </div>
+
+       
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <br>

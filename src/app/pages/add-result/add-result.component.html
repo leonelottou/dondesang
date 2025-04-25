@@ -1,0 +1,471 @@
+<app-navigator [active]="page"></app-navigator>
+
+<div class="row mb-3 ">
+    <div class="col-md-4" style="border: 0px solid red;"> 
+        <div style="color:#00B0D1;width:300px;height: 50px;line-height: 25px;"  class="bg-white border border-primary border-3 p-1  mt-3 text-center  ms-4">
+        <b>Entrer des résultats</b> 
+         </div>
+
+</div>
+
+ 
+
+</div>
+
+
+
+
+
+
+<div class=" p-3 "  style="border:3px solid #00B0D1;width: 95%;margin: auto;  " [formGroup]="signin">
+  
+  
+    <div class="input-group mb-3 ">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white;width:150px "  id="basic-addon1">Numéro du don</span>
+    <span style="border:3px solid #00B0D1;min-width: 300px; text-align: center;  max-width: 300px; " >
+
+                   {{local["code_don"]}}
+    </span >
+        
+     <!--    <input   [readonly]="true"   autocomplete="new-password"  type="text" class="form-control" placeholder="Nom" aria-label="Nom d 'utilisateur" aria-describedby="basic-addon1"> -->
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white ;width:150px"  id="basic-addon1">Groupe ABO</span>
+        
+        <select formControlName="abo" class="form-select form-select-lg " aria-label=".form-select-lg example" style="max-width: 300px;"  [ngClass]="myerroclass(signin,'abo')">
+            <option selected>Chosir</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="O">O</option>
+            <option value="AB">AB</option>
+
+
+        </select>
+    </div>
+
+    <app-form-error [nom]="'abo'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+
+    
+    <div class="input-group mb-3">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white;width:150px "  id="basic-addon1">Groupe Rhésus D</span>
+        
+        <select formControlName="rhesus" class="form-select form-select-lg " aria-label=".form-select-lg example" style="max-width: 300px;" [ngClass]="myerroclass(signin,'rhesus')">
+            <option selected>Chosir</option>
+            <option value="+">Positif</option>
+            <option value="-">  Négatif</option>
+    
+
+
+        </select>
+    </div>
+    <app-form-error [nom]="'rhesus'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+    <div class="row">
+        <div class="col-md-2">
+            <span class="input-group-text"  style="background-color: #00B0D1 ;color:white ;width:180px"  id="basic-addon1">Depistage du HIV 1,2</span>
+        </div>
+        <div class="col-md-10">
+            <hr >
+        </div>
+
+
+    </div>
+
+    <!-- premier bloc -->
+
+    <div class="row">
+         <div class="col-md-11">
+                    
+                        <div class="row mb-3">
+                            <div class="col">
+
+                                <div   class="box-border mt-3" >
+                                    <b> 1er Test : Test immunochromatographique Determine HIV1,2 ALERE</b> 
+                                    </div>
+                            
+                            </div>
+                            <div class="col">
+                                <select formControlName="test1" [(ngModel)]="reactif1" class="form-select mt-3 " aria-label=".form-select-lg example" style="max-width: 300px;" [ngClass]="myerroclass(signin,'test1')" >
+                                    <option selected>Chosir</option>
+                                    <option value="+">Reactif</option>
+                                    <option value="-">  Non reactif</option>
+                            
+                        
+                        
+                                </select>
+
+                                <app-form-error [nom]="'test1'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-3">
+                        <div class="col">
+
+                            <span  class="box-border mt-3 me-3 p-1">
+                                <b>2eme Test : Test ELISA HUMAN</b> 
+                            </span>
+                            <span  class="box-border mt-3 me-3 p-1">
+                                <b>DO Seuil : 0,95</b> 
+                            </span>
+                        
+                        </div>
+                        <div class="col">
+                            <div class="input-group ">
+                                <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">&nbsp;DO patient</span>
+                                
+                                <input  [dropSpecialCharacters]="false"  [(ngModel)]="seuil1" [showMaskTyped]="true"  mask="0,000" autocomplete="new-password"  type="text" class="form-control" placeholder="Taux d'hemoglobine"  aria-describedby="basic-addon1" style="max-width: 100px;" [ngClass]="myerroclass(signin,'seuil1')"  formControlName="seuill1">   
+
+                              
+                            
+                            
+                            
+                            </div>
+
+                            <app-form-error [nom]="'seuill1'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+                 
+
+                    </div>
+                    </div>
+
+         </div>
+
+         <div class="col-md-1">
+      <div  class="resultbox" [ngClass]="{'positif': resultat(reactif1,do1,seuil1)=='Positif' , ' negatif':resultat(reactif1,do1,seuil1)=='Negatif'}"     >
+            {{ resultat(reactif1,do1,seuil1)}}
+            
+        </div>
+    
+
+         </div>
+
+
+    </div>
+
+ 
+
+
+<div class="row">
+    <div class="col-md-4">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">Depistage de l'hepatite virale B antigene HBS</span>
+    </div>
+    <div class="col-md-8">
+        <hr >
+    </div>
+
+
+</div>
+
+<!-- deuxieme bloc -->
+
+<div class="row">
+    <div class="col-md-11">
+               
+                   <div class="row mb-3">
+                       <div class="col">
+
+                           <div   class="box-border mt-3">
+                               <b> 1er Test : Test immunochromatographique </b> 
+                               </div>
+                       
+                       </div>
+                       <div class="col">
+                           <select formControlName="test2"  [(ngModel)]="reactif2" class="form-select mt-3 " aria-label=".form-select-lg example" style="max-width: 300px;" [ngClass]="myerroclass(signin,'test2')">
+                               <option selected>Chosir</option>
+                               <option value="+">Reactif</option>
+                               <option value="-">  Non reactif</option>
+                       
+                   
+                   
+                           </select>
+                           <app-form-error [nom]="'test2'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+               
+
+                   </div>
+                
+               </div>
+
+
+               <div class="row mb-3">
+                   <div class="col">
+
+                       <span  class="box-border mt-3 me-3 p-1">
+                           <b>2eme Test : Test ELISA HUMAN</b> 
+                       </span>
+                       <span  class="box-border mt-3 me-3 p-1">
+                           <b>DO Seuil : 0,148</b> 
+                       </span>
+                   
+                   </div>
+                   <div class="col">
+                       <div class="input-group ">
+                           <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">&nbsp;DO patient</span>
+                           
+               
+
+                     <input   formControlName="seuill2" [dropSpecialCharacters]="false"  [(ngModel)]="seuil2" [showMaskTyped]="true"  mask="0,000" autocomplete="new-password"  type="text" class="form-control" aria-describedby="basic-addon1" style="max-width: 100px;"  [ngClass]="myerroclass(signin,'seuill2')">
+                       
+                       
+                       </div>
+                       <app-form-error [nom]="'seuill2'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+                       
+                       <div class="col">
+                       
+
+                   </div>
+
+
+               </div>
+               </div>
+
+    </div>
+
+    <div class="col-md-1">
+        <div   class="resultbox" [ngClass]="{'positif': resultat(reactif2,do2,seuil2)=='Positif' , ' negatif':resultat(reactif2,do2,seuil2)=='Negatif'}">
+            {{ resultat(reactif2,do2,seuil2)}}
+        
+    </div>
+
+
+    </div>
+
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">Depistage de l'hepatite virale C antigene HCV</span>
+    </div>
+    <div class="col-md-8">
+        <hr >
+    </div>
+
+
+</div>
+
+<!-- troiseme bloc -->
+
+<div class="row">
+    <div class="col-md-11">
+               
+                   <div class="row mb-3">
+                       <div class="col">
+
+                           <div   class="box-border mt-3">
+                               <b>1er Test : Test immunochromatographique </b> 
+                               </div>
+                       
+                       </div>
+                       <div class="col">
+                           <select formControlName="test3" [(ngModel)]="reactif3" class="form-select mt-3 " aria-label=".form-select-lg example" style="max-width: 300px;"  [ngClass]="myerroclass(signin,'test3')">
+                               <option selected>Chosir</option>
+                               <option value="+">Reactif</option>
+                               <option value="-">  Non reactif</option>
+                       
+                   
+                   
+                           </select>
+                           <app-form-error [nom]="'test3'" [champ]="'nom'" [form]="signin"  ></app-form-error>
+
+               
+
+                   </div>
+               </div>
+
+
+               <div class="row mb-3">
+                   <div class="col">
+
+                       <span  class="box-border mt-3 me-3 p-1">
+                           <b>2eme Test : Test ELISA HUMAN</b> 
+                       </span>
+                       <span  class="box-border mt-3 me-3 p-1">
+                           <b>DO Seuil : 0,165</b> 
+                       </span>
+                   
+                   </div>
+                   <div class="col">
+                       <div class="input-group ">
+                           <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">&nbsp;DO patient</span>
+                           
+                           <input formControlName="seuill3" [dropSpecialCharacters]="false"  [(ngModel)]="seuil3" [showMaskTyped]="true"  mask="0,000" autocomplete="new-password"  type="text" class="form-control" placeholder="Taux d'hemoglobine"  aria-describedby="basic-addon1" style="max-width: 100px;" [ngClass]="myerroclass(signin,'seuill3')" >
+                       
+                       
+                       </div>
+
+                       <app-form-error [nom]="'date_last'" [champ]="'seuill3'" [form]="signin"  ></app-form-error>
+                       
+                       <div class="col">
+                       
+
+                   </div>
+
+
+               </div>
+               </div>
+
+    </div>
+
+    <div class="col-md-1">
+        <div   class="resultbox" [ngClass]="{'positif': resultat(reactif3,do3,seuil3)=='Positif' , ' negatif':resultat(reactif3,do3,seuil3)=='Negatif'}">
+            {{ resultat(reactif3,do3,seuil3)}}
+        
+    </div>
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <span class="input-group-text"  style="background-color: #00B0D1 ;color:white "  id="basic-addon1">TPHA</span>
+    </div>
+    <div class="col-md-8">
+        <hr >
+    </div>
+
+
+</div>
+
+<!-- quatrieme bloc -->
+
+<div class="row">
+    <div class="col-md-11">
+               
+                   <div class="row mb-3">
+                       <div class="col">
+
+                           <div   class="box-border mt-3">
+                               <b>Technique  immunochromatographique </b> 
+                               </div>
+                       
+                       </div>
+                       <div class="col">
+                           <select  formControlName="test4" [(ngModel)]="reactif4" class="form-select mt-3 " aria-label=".form-select-lg example" style="max-width: 300px;" [ngClass]="myerroclass(signin,'test4')">
+                               <option selected>Chosir</option>
+                               <option value="+">Reactif</option>
+                               <option value="-">  Non reactif</option>
+                       
+                   
+                   
+                           </select>
+
+                           <app-form-error [nom]="'poids'" [champ]="'test4'" [form]="signin"  ></app-form-error>
+
+
+               
+
+                   </div>
+               </div>
+
+
+        
+
+    </div>
+
+    <div class="col-md-1">
+        <div   class="resultbox" [ngClass]="{'positif': resultat2(reactif4)=='Positif' , ' negatif':resultat2(reactif4)=='Negatif'}">
+            {{ resultat2(reactif4)}}
+        
+    </div>
+
+    </div>
+
+
+    <br>
+
+   <!--  [disabled]='signin.invalid' -->
+
+    <button   [disabled]='signin.invalid' (click)="openDialog(template,'400px','250px')"  class="mt-5 mb-3" style="max-width: 200px; margin: auto;"   mat-raised-button color="success">Valider</button>
+
+
+</div>
+
+
+
+
+
+</div>
+
+<ng-template #template>
+
+    <div class="info" style="width: 600px; ">
+        <div style="text-align: center;">
+
+            <mat-icon style="color:orange">warning</mat-icon>
+
+        </div>
+   
+    <h1 mat-dialog-title style="margin: auto ; text-align: center;">
+        <b class=" question mb-4 p-1" style="font-size: 14px;">Voulez vous confirmer les informations sur le don ?</b> </h1>
+
+    <div class="row mt-3">
+        <div class="col"  >
+            <div class="p-2 ml-3 question"   id="basic-addon1">Depistage du HIV1,2</div>
+        </div>
+        <div class="col"  >
+            <div class="p-2 ml-3 question2"     id="basic-addon1"  [ngClass]="{'positif':result1=='Positif' , ' negatif':result1=='Negatif'}" >       
+                {{result1}}
+                
+            </div>
+        </div>
+ 
+    </div>
+    <br>
+    <div class="row mt-3">
+        <div class="col" >
+            <div class="p-2 ml-3 question"    id="basic-addon1">Dépistage de l'hépatite B </div>
+        </div>
+        <div class="col" >
+            <div class="p-2 ml-3 question2"     id="basic-addon1"  [ngClass]="{'positif':result2=='Positif' , ' negatif':result2=='Negatif'}" >       
+                {{result2}}
+                
+        </div>
+        </div>
+ 
+    </div>
+    <br>
+    
+    <div class="row mt-3">
+        <div class="col" >
+            <div class="p-2 ml-3 question"    id="basic-addon1">Dépistage de l'hépatite C </div>
+        </div>
+        <div class="col" >
+            <div class="p-2 ml-3 question2"     id="basic-addon1"  [ngClass]="{'positif':result3=='Positif' , ' negatif':result3=='Negatif'}" >       
+                {{result3}}
+                
+        </div>
+        </div>
+ 
+    </div> <br>
+
+    <div class="row mt-3 mb-3">
+        <div class="col" >
+            <div class="p-2 ml-3 question"    id="basic-addon1">TPHA  </div>
+        </div>
+        <div class="col" >
+            <div class="p-2 ml-3 question2"     id="basic-addon1"  [ngClass]="{'positif':result4=='Positif' , ' negatif':result4=='Negatif'}" >       
+                {{result4}}
+                
+        </div>
+        </div>
+ 
+    </div>
+    <br>
+    <div style="width:600px;text-align: center;">
+        <button (click)="add_result()" class="me-5"  mat-dialog-close style="margin:auto; "   mat-raised-button color="success">Valider</button>
+        <button  mat-dialog-close style="margin:auto; "   mat-raised-button color="success">Annuler</button>
+
+    </div>
+    
+
+ 
+        </div>
+   
+   </ng-template>

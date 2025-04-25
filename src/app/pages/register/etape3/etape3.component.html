@@ -1,0 +1,147 @@
+
+
+
+             
+<div style="color:#00B0D1"  class="bg-white border border-primary border-2 p-2 mb-3  text-center ">
+<b>Enquete comportementale</b> 
+</div>
+<div *ngIf="s!=0" class=" mt-2 alert alert-danger" role="alert" style="width: 100%;">
+  <i style="color:red" class="fas fa-exclamation-triangle"></i>&nbsp;<b>Le donneur ne pas donner du sang</b> 
+  
+</div>
+
+<div class="input-group mb-3">
+ 
+    <span class="p-2 ml-3 question"   id="basic-addon1"> Avez-vous pris ou prenez vous la drogue ? </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="question1"  [value]=1>
+        <label class="form-check-label" for="flexRadioDefault1">Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" [value]=0 type="radio" name="flexRadioDefault" id="flexRadioDefault2" [(ngModel)]="question1" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="input-group mb-3">
+ 
+    <span class="p-2 ml-3 question"   id="basic-addon1"> Votre partenaire se drogue t-il ? </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" [(ngModel)]="question2" [value]=1>
+        <label class="form-check-label" for="flexRadioDefault1"    >Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" checked [(ngModel)]="question2" [value]=0>
+        <label class="form-check-label" for="flexRadioDefault2"   >
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="input-group mb-3">
+ 
+    <span class="p-2 ml-3 question"    id="basic-addon1"> Êtes-vous séropositif ? </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1"  [(ngModel)]="question3" [value]=1 >
+        <label class="form-check-label" for="flexRadioDefault1">Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2" checked  [(ngModel)]="question3" [value]=0>
+        <label class="form-check-label" for="flexRadioDefault2">
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+      
+
+    </div>
+
+</div>
+
+<div class="input-group mb-3">
+ 
+    <span class="p-2 ml-3 question"   id="basic-addon1"> Avez-vous plus d’un partenaire sexuel (rapports avec ou sans préservatifs) </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault1"  [(ngModel)]="question4" [value]=1>
+        <label class="form-check-label" for="flexRadioDefault1">Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault2" checked  [(ngModel)]="question4" [value]=0>
+        <label class="form-check-label" for="flexRadioDefault2">
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="input-group mb-3">
+ 
+    <span class="p-2 ml-3 question"    id="basic-addon1"> Avez-vous des raisons de penser que votre partenaire a des comportements à risques ? </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault1"  [(ngModel)]="question5" [value]=1>
+        <label class="form-check-label" for="flexRadioDefault1">Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault2" checked  [(ngModel)]="question5" [value]=0>
+        <label class="form-check-label" for="flexRadioDefault2">
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+    </div>
+
+</div>
+
+<div class="input-group ">
+ 
+    <span class="p-2 ml-3 question"   id="basic-addon1"> Si vous êtes un homme, avez-vous ou avez-vous eu des relations sexuelles avec un autre homme (avec ou sans
+        préservatifs) </span>
+      <div class="p-2">
+    <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault1"  [(ngModel)]="question6" [value]=1>
+        <label class="form-check-label" for="flexRadioDefault1">Oui </label>
+      </div> 
+      <div class="form-check form-check-inline mr-3 ">
+        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault2" checked  [(ngModel)]="question6" [value]=0>
+        <label class="form-check-label" for="flexRadioDefault2">
+         <Nav>  Non</Nav>
+        </label>
+      </div>
+
+    </div>
+
+
+</div>
+
+
+
+    
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+

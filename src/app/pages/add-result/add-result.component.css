@@ -1,0 +1,69 @@
+.box-border{
+  font-size: 13px ;
+  text-align: left;
+  padding-left: 10px ;
+}
+
+.resultbox {
+    color:white;
+
+     line-height: 55px;
+
+    height: 60px;
+
+    border: 2px solid  black;
+
+
+    text-align: center;
+
+}
+
+ .negatif {
+  
+    background-color: #E35D6A;
+ 
+}
+
+.positif {
+  
+    background-color:#198754;
+
+}
+
+
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #DFDFDF;
+  }
+  .is-valid:focus{
+    border: 1px solid green;
+  }
+
+  .is-invalid:focus{
+    border: 1px solid red;
+  }
+
+ /*  .input-group-text{
+    max-width:210px
+  }
+ */
+  .question2{
+    color: white;
+    width: 270px !important;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid black;
+  }
+
+  .question{
+
+    width: 270px !important;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .mat-icon {
+    font-size: 60px;
+  }
